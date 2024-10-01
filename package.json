@@ -31,5 +31,9 @@
     "vitest": "^2.0.0",
     "wrangler": "^3.79.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "colord": "^2.9.3"
+  }
 }
