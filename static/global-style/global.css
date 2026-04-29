@@ -2,83 +2,30 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* DESIGN TOKENS */
+
 :root {
 	--typo1: 'Roboto', sans-serif;
-}
+	--br: 8px;
+	--borderWidth: 2px;
 
-h1 {
-	color: var(--t1);
-	font-family: var(--typo1);
-}
-
-h2 {
-	color: var(--t1);
-	font-family: var(--typo1);
-}
-
-h3 {
-	color: var(--t1);
-	font-family: var(--typo1);
-	font-weight: 500;
-}
-
-h4 {
-	color: var(--t1);
-	font-family: var(--typo1);
-	font-weight: 300;
-}
-
-h5 {
-	color: var(--t1);
-	font-family: var(--typo1);
-	font-weight: 500;
-	font-size: 0.9rem;
-}
-
-p {
-	color: var(--t1);
-	font-family: var(--typo1);
-	font-weight: 300;
-	font-size: 0.8rem;
-	text-align: justify;
-}
-
-/* COLORS MODE */
-body,
-body[data-color-mode='dark'] {
-	/* backgroud color */
+	/* Dark mode (only mode) */
 	--b1: #030008;
-	/* backgroud color opacity*/
 	--b1o3: rgba(3, 0, 8, 0.3);
-	/* b1 light var */
 	--b2: #16131d;
-	/* mostly for tooltips */
 	--b3: #717181;
-	/* text & T color */
 	--t1: #fbfffd;
-	/* peps color */
-	--x1: blue;
-}
-body[data-color-mode='light'] {
-	--b1: #d4d4d4;
-	--b1o3: rgba(3, 0, 8, 0.3);
-
-	--b2: #030008;
-	--b3: #37313f;
-
-	--t1: #08924d;
-	--x1: blue;
 }
 
-/* GLOBAL SETTINGS */
-
-body {
-	background: var(--b1);
-}
+/* GLOBAL RESET */
 
 * {
 	margin: 0;
 	text-decoration: none;
+}
+
+body {
+	background: var(--b1);
 }
 
 ul {
@@ -86,13 +33,36 @@ ul {
 	padding-inline-start: 0;
 }
 
-:root {
-	/* Border radius */
-	--br: 8px;
+/* TYPOGRAPHY */
 
-	/* Border width */
-	--borderWidth: 2px;
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+span,
+p {
+	color: var(--t1);
+	font-family: var(--typo1);
 }
+
+h3 {
+	font-weight: 500;
+}
+h4 {
+	font-weight: 300;
+}
+h5 {
+	font-weight: 500;
+	font-size: 0.9rem;
+}
+p {
+	font-weight: 300;
+	font-size: 0.8rem;
+}
+
+/* ELEMENTS */
 
 svg {
 	stroke: var(--t1);
@@ -103,10 +73,18 @@ svg {
 	fill: none;
 }
 
+icoglyph-svg {
+	--ig-stroke: var(--t1);
+	--ig-stroke-width: 0.4rem;
+	--ig-stroke-linecap: round;
+	--ig-stroke-linejoin: round;
+	--ig-fill: none;
+}
+
 button {
 	margin: 0;
 	padding: 0;
-	border: var(--br);
+	border: none;
 	background: none;
 	font: inherit;
 	color: inherit;
@@ -124,8 +102,22 @@ input[type='text'] {
 	font-family: var(--typo1);
 }
 
-/* CONTAINER */
+a {
+	color: var(--t1);
+	text-decoration: none;
+}
+
+/* UTILITY */
+
 .basic-container {
 	border-radius: var(--br);
 	background: var(--b2);
+}
+
+.top-right-btn {
+	background: var(--b1o3);
+	height: 1.7rem;
+	width: 1.7rem;
+	padding: 0.3rem;
+	border-radius: var(--br);
 }
