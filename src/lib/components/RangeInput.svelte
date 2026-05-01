@@ -1,5 +1,5 @@
 <script>
-	import { isMobile } from '$lib/device.js';
+	import { isMobile } from '$lib/mobile.js';
 
 	let {
 		value = $bindable(0),

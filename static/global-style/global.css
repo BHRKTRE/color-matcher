@@ -63,22 +63,27 @@ p {
 }
 
 /* ELEMENTS */
-
-svg {
-	stroke: var(--t1);
-	stroke-linejoin: round;
-	stroke-linecap: round;
-	stroke-width: 0.4rem;
-	stroke-opacity: 1;
-	fill: none;
-}
-
+svg,
 icoglyph-svg {
+	opacity: 0.9;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	fill: none;
+	stroke: var(--t1);
+	stroke-width: 0.4rem;
 	--ig-stroke: var(--t1);
-	--ig-stroke-width: 0.4rem;
+	--ig-fill: none;
 	--ig-stroke-linecap: round;
 	--ig-stroke-linejoin: round;
-	--ig-fill: none;
+	--ig-stroke-width: 0.4rem;
+	transition: 0.7s;
+}
+
+svg:hover,
+icoglyph-svg:hover {
+	opacity: 1;
 }
 
 button {

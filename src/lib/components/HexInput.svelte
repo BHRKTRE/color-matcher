@@ -1,5 +1,4 @@
 <script>
-	import GlyphButton from './GlyphButton.svelte';
 	import { isValidHex, randomHex } from '$lib/color/convert.js';
 	import { tooltip } from '$lib/tooltip.svelte.js';
 
@@ -18,8 +17,7 @@
 		onhexchange = () => {}
 	} = $props();
 
-	let copied = $state(false);
-	let copiedHex = $state('');
+	let copyTimeout;
 	let randomToggle = $state(false);
 
 	function handleInput(e) {
@@ -46,17 +44,17 @@
 		e.target.select();
 	}
 
+	// copy button
+	let copied = $state(false);
 	function copyHex() {
 		navigator.clipboard.writeText(hex);
 		tooltip.set(`Hex of ${label} copied!`);
 		copied = true;
-		copiedHex = hex;
+		clearTimeout(copyTimeout);
+		copyTimeout = setTimeout(() => (copied = false), 1500);
 	}
 
-	$effect(() => {
-		if (hex !== copiedHex) copied = false;
-	});
-
+	// Random button
 	function randomize() {
 		hex = randomHex();
 		randomToggle = !randomToggle;
@@ -68,13 +66,12 @@
 	<div class="t-container">
 		<div class="hex-container">
 			{#if showSelect}
-				<GlyphButton
-					glyphName="onSelec"
-					inSecondState={!isSelected}
-					onClick={onselect}
-					description={isSelected ? '' : `Select ${label}`}
-					showTooltips={false}
-				/>
+				<button onclick={onselect} aria-label={isSelected ? '' : `Select ${label}`}>
+					<icoglyph-svg
+						use={isSelected ? 'selected' : 'unselected'}
+						aria={isSelected ? '' : `Select ${label}`}
+					></icoglyph-svg>
+				</button>
 			{/if}
 			<input
 				class="HexInputText"
@@ -93,54 +90,45 @@
 
 		<div class="btn-container">
 			{#if showRemove}
-				<GlyphButton
-					glyphName="deleteThisOne"
-					onClick={onremove}
-					showTooltips={false}
-					description={`Remove ${label}`}
-				/>
-				<GlyphButton
-					glyphName="incrementSize"
-					onClick={onresizeup}
-					showTooltips={false}
-					description={`Increase size of ${label}`}
-				/>
-				<GlyphButton
-					glyphName="decrementSize"
-					onClick={onresizedown}
-					showTooltips={false}
-					description={`Decrease size of ${label}`}
-				/>
+				<button onclick={onremove} aria-label={`Remove ${label}`}>
+					<icoglyph-svg use={'delete'} aria={`Remove ${label}`}></icoglyph-svg>
+				</button>
+
+				<button onclick={onresizeup} aria-label={`Increase size of ${label}`}>
+					<icoglyph-svg use={'scale-up'} aria={`Increase size of ${label}`}></icoglyph-svg>
+				</button>
+
+				<button onclick={onresizedown} aria-label={`Decrease size of ${label}`}>
+					<icoglyph-svg use={'scale-down'} aria={`Decrease size of ${label}`}></icoglyph-svg>
+				</button>
 			{/if}
 
 			{#if showAdd}
-				<GlyphButton
-					glyphName="addThisOne"
-					onClick={onadd}
-					showTooltips={false}
-					description="Add a color"
-				/>
+				<button onclick={onadd} aria-label="Add a color">
+					<icoglyph-svg use={'add'} aria="Add a color"></icoglyph-svg>
+				</button>
 			{/if}
 
-			<GlyphButton
-				glyphName="copyToClipboard"
-				inSecondState={copied}
-				onClick={copyHex}
-				showTooltips={false}
-				description={`Copy hex of ${label}`}
-			/>
-			<GlyphButton
-				glyphName="randomize"
-				inSecondState={randomToggle}
-				onClick={randomize}
-				showTooltips={false}
-				description={`Randomize ${label}`}
-			/>
+			<button onclick={copyHex} aria-label={`Copy hex of ${label}`}>
+				<icoglyph-svg use={copied ? 'copied' : 'copy'} label={`Copy hex of ${label}`}>
+				</icoglyph-svg>
+			</button>
+
+			<button onclick={randomize} aria-label={`Randomize ${label}`}>
+				<icoglyph-svg use={'random'}></icoglyph-svg>
+			</button>
 		</div>
 	</div>
 </div>
 
 <style>
+	button {
+		border-radius: var(--br);
+		height: 100%;
+		transition: 0.4s;
+		aspect-ratio: 1/1;
+	}
+
 	.HexInputText {
 		width: 100%;
 	}
