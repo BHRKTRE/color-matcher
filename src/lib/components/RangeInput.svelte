@@ -103,7 +103,7 @@
 	.steppers icoglyph-svg {
 		width: 15px;
 		height: 15px;
-		--ig-stroke-width: 0.8rem;
+		--icoglyph-stroke-width: 0.8rem;
 	}
 
 	/* Range input */

@@ -73,11 +73,11 @@ icoglyph-svg {
 	fill: none;
 	stroke: var(--t1);
 	stroke-width: 0.4rem;
-	--ig-stroke: var(--t1);
-	--ig-fill: none;
-	--ig-stroke-linecap: round;
-	--ig-stroke-linejoin: round;
-	--ig-stroke-width: 0.4rem;
+	--icoglyph-stroke: var(--t1);
+	--icoglyph-fill: none;
+	--icoglyph-stroke-linecap: round;
+	--icoglyph-stroke-linejoin: round;
+	--icoglyph-stroke-width: 0.4rem;
 	transition: 0.7s;
 }
 
