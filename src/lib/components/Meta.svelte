@@ -2,7 +2,7 @@
 	let {
 		title = 'Color Matcher — Create and Share Color Combinations',
 		description = 'Color Matcher is a free web app for creating color palettes. Share your creations through a unique URL. Supports HSL, HSV, CMYK, and RGB.',
-		canonical = 'https://www.color-matcher.app',
+		canonical = 'https://color-matcher.app',
 		robots = undefined
 	} = $props();
 
@@ -10,7 +10,7 @@
 		'@context': 'https://schema.org',
 		'@type': 'WebApplication',
 		name: 'Color Matcher',
-		url: 'https://www.color-matcher.app',
+		url: 'https://color-matcher.app',
 		description:
 			'A free web app for creating and sharing color palettes. Supports HSL, HSV, CMYK, and RGB.',
 		applicationCategory: 'DesignApplication',

@@ -4,7 +4,7 @@
 	let { data } = $props();
 </script>
 
-<Meta canonical="https://www.color-matcher.app" />
+<Meta canonical="https://color-matcher.app" />
 <ColorApp
 	initialColorSpace={data.colorSpace}
 	initialHexColors={data.hexColors}

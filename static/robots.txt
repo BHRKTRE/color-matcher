@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.color-matcher.app/sitemap.xml
+Sitemap: https://color-matcher.app/sitemap.xml

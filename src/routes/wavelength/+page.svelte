@@ -15,7 +15,7 @@
 <Meta
 	title="Wavelength — Color Matcher"
 	description="Visualize visible light wavelengths from 380 nm to 780 nm as colours."
-	canonical="https://www.color-matcher.app/wavelength"
+	canonical="https://color-matcher.app/wavelength"
 />
 
 <div class="layout" style="background: {hex};">
