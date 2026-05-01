@@ -3,7 +3,6 @@
 	import HexInput from '$lib/components/HexInput.svelte';
 	import RangeInput from '$lib/components/RangeInput.svelte';
 	import ColorSpaceNav from '$lib/components/ColorSpaceNav.svelte';
-	import Meta from '$lib/components/Meta.svelte';
 	import { untrack } from 'svelte';
 
 	import { hexToChannels, channelsToHex, invertHex, rotateHex } from '$lib/color/convert.js';
@@ -167,8 +166,6 @@
 </script>
 
 <svelte:window onkeydown={handleKeydown} />
-
-<Meta />
 
 <AppShell>
 	{#snippet mainContent()}

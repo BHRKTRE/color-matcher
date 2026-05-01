@@ -1,7 +1,12 @@
 <script>
 	import RangeInput from '$lib/components/RangeInput.svelte';
 	import Meta from '$lib/components/Meta.svelte';
-	import { wavelengthToHex, WAVELENGTH_MIN, WAVELENGTH_MAX, WAVELENGTH_GRADIENT } from '$lib/color/wavelength.js';
+	import {
+		wavelengthToHex,
+		WAVELENGTH_MIN,
+		WAVELENGTH_MAX,
+		WAVELENGTH_GRADIENT
+	} from '$lib/color/wavelength.js';
 
 	let nm = $state(550);
 	const hex = $derived(wavelengthToHex(nm));
@@ -10,6 +15,7 @@
 <Meta
 	title="Wavelength — Color Matcher"
 	description="Visualize visible light wavelengths from 380 nm to 780 nm as colours."
+	canonical="https://www.color-matcher.app/wavelength"
 />
 
 <div class="layout" style="background: {hex};">
@@ -57,11 +63,11 @@
 		width: 1em;
 		height: 1em;
 		flex-shrink: 0;
-		--ig-stroke: var(--t1);
-		--ig-fill: none;
-		--ig-stroke-linecap: round;
-		--ig-stroke-linejoin: round;
-		--ig-stroke-width: 0.6rem;
+		--icoglyph-stroke: var(--t1);
+		--icoglyph-fill: none;
+		--icoglyph-stroke-linecap: round;
+		--icoglyph-stroke-linejoin: round;
+		--icoglyph-stroke-width: 0.6rem;
 	}
 
 	.back-link {
