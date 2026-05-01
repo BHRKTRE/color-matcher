@@ -58,6 +58,18 @@
 
 	const gradients = $derived(channels.map((ch) => getGradients(colorSpace, ch)));
 
+	// --- Share link
+
+	let copyTimeout;
+	let linkCopied = $state(false);
+	function shareLink() {
+		const url = 'https://color-matcher.app' + encodeState({ colorSpace, hexColors, compareSizes });
+		navigator.clipboard.writeText(url);
+		linkCopied = true;
+		clearTimeout(copyTimeout);
+		copyTimeout = setTimeout(() => (linkCopied = false), 1500);
+	}
+
 	// --- Undo / redo
 
 	function snapshot() {
@@ -187,6 +199,12 @@
 	{/snippet}
 
 	{#snippet topRight()}
+		<div class="top-right-btn">
+			<button onclick={shareLink} aria-label="Share">
+				<icoglyph-svg use={!linkCopied ? 'share' : 'copied'}></icoglyph-svg>
+				<span class="tooltip">{!linkCopied ? 'Share' : 'Link copied !'}</span>
+			</button>
+		</div>
 		<div class="top-right-btn">
 			<button onclick={() => window.open(GITHUB, '_blank')} aria-label="GitHub">
 				<svg viewBox="0 0 100 100">
