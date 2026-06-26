@@ -69,7 +69,7 @@
 				<button onclick={onselect} aria-label={isSelected ? '' : `Select ${label}`}>
 					<icoglyph-svg
 						use={isSelected ? 'selected' : 'unselected'}
-						aria={isSelected ? '' : `Select ${label}`}
+						label={isSelected ? '' : `Select ${label}`}
 					></icoglyph-svg>
 				</button>
 			{/if}
@@ -91,21 +91,21 @@
 		<div class="btn-container">
 			{#if showRemove}
 				<button onclick={onremove} aria-label={`Remove ${label}`}>
-					<icoglyph-svg use={'delete'} aria={`Remove ${label}`}></icoglyph-svg>
+					<icoglyph-svg use={'delete'} label={`Remove ${label}`}></icoglyph-svg>
 				</button>
 
 				<button onclick={onresizeup} aria-label={`Increase size of ${label}`}>
-					<icoglyph-svg use={'scale-up'} aria={`Increase size of ${label}`}></icoglyph-svg>
+					<icoglyph-svg use={'scale-up'} label={`Increase size of ${label}`}></icoglyph-svg>
 				</button>
 
 				<button onclick={onresizedown} aria-label={`Decrease size of ${label}`}>
-					<icoglyph-svg use={'scale-down'} aria={`Decrease size of ${label}`}></icoglyph-svg>
+					<icoglyph-svg use={'scale-down'} label={`Decrease size of ${label}`}></icoglyph-svg>
 				</button>
 			{/if}
 
 			{#if showAdd}
 				<button onclick={onadd} aria-label="Add a color">
-					<icoglyph-svg use={'add'} aria="Add a color"></icoglyph-svg>
+					<icoglyph-svg use={'add'} label="Add a color"></icoglyph-svg>
 				</button>
 			{/if}
 

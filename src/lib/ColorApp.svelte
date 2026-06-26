@@ -181,6 +181,7 @@
 
 <AppShell>
 	{#snippet mainContent()}
+		<h1 class="sr-only">Color Matcher — Create and Share Color Palettes</h1>
 		<div class="color-background" style="background: {hexColors[0]};"></div>
 		<div class="compare-overlay">
 			{#if hexColors.length >= 3}

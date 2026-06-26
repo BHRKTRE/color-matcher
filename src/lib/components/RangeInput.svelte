@@ -97,13 +97,13 @@
 		justify-content: center;
 		width: 18px;
 		height: 18px;
-		margin-right: 4px;
+		padding: 4px;
 	}
 
 	.steppers icoglyph-svg {
 		width: 15px;
 		height: 15px;
-		--icoglyph-stroke-width: 0.8rem;
+		--icoglyph-stroke-width: 16;
 	}
 
 	/* Range input */

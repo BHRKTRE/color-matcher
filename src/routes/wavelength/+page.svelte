@@ -63,11 +63,8 @@
 		width: 1em;
 		height: 1em;
 		flex-shrink: 0;
-		--icoglyph-stroke: var(--t1);
-		--icoglyph-fill: none;
-		--icoglyph-stroke-linecap: round;
-		--icoglyph-stroke-linejoin: round;
-		--icoglyph-stroke-width: 0.6rem;
+		color: var(--t1);
+		--icoglyph-stroke-width: 12;
 	}
 
 	.back-link {

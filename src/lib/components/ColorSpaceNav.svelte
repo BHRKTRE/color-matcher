@@ -38,10 +38,9 @@
 
 <style>
 	.nav-wrapper {
+		position: relative;
 		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		gap: 8px;
+		justify-content: flex-end;
 	}
 
 	.current-space {
@@ -63,21 +62,24 @@
 	}
 
 	.space-list {
+		position: absolute;
+		top: 0;
+		right: calc(100% + 8px);
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		gap: 6px;
-		overflow: hidden;
-		max-height: 0;
 		opacity: 0;
-		transition:
-			max-height 0.4s ease,
-			opacity 0.3s ease;
+		transform: translateX(10px);
 		pointer-events: none;
+		transition:
+			transform 0.4s ease,
+			opacity 0.3s ease;
+		white-space: nowrap;
 	}
 
 	.space-list.open {
-		max-height: 300px;
 		opacity: 1;
+		transform: translateX(0);
 		pointer-events: auto;
 	}
 

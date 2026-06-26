@@ -63,8 +63,7 @@ p {
 }
 
 /* ELEMENTS */
-svg,
-icoglyph-svg {
+svg {
 	opacity: 0.9;
 
 	display: block;
@@ -73,11 +72,21 @@ icoglyph-svg {
 	fill: none;
 	stroke: var(--t1);
 	stroke-width: 0.4rem;
-	--icoglyph-stroke: var(--t1);
-	--icoglyph-fill: none;
-	--icoglyph-stroke-linecap: round;
-	--icoglyph-stroke-linejoin: round;
-	--icoglyph-stroke-width: 0.4rem;
+	transition: 0.7s;
+}
+
+/* [use] raises specificity above the component's own injected
+   `icoglyph-svg { width: 1em }` default (appended last to <head>),
+   so the icons fill their button instead of staying at 1em */
+icoglyph-svg[use] {
+	opacity: 0.9;
+	display: block;
+	width: 100%;
+	height: 100%;
+	/* color drives the icon stroke (component uses stroke: currentColor) */
+	color: var(--t1);
+	/* stroke width is in viewBox units now (viewBox is 100 wide, default 10) */
+	--icoglyph-stroke-width: 8;
 	transition: 0.7s;
 }
 
@@ -123,6 +132,19 @@ a {
 	background: var(--b1o3);
 	height: 1.7rem;
 	width: 1.7rem;
-	padding: 0.3rem;
+	padding: 0.2rem;
 	border-radius: var(--br);
+}
+
+/* Visually hidden but accessible to screen readers and search engines */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
