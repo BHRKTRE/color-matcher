@@ -8,7 +8,9 @@ SvelteKit 2, Svelte 5 runes, JavaScript. `colord` is the only runtime dependency
 
 - `npm run dev`, `npm run build`
 - `npm run lint`: Prettier check then ESLint. No Stylelint
-- `npm test`: Playwright (builds, then serves on 4173) then Vitest
+- `npm test`: Playwright (`npm run preview` builds, then `wrangler pages dev`
+  serves on 8788) then Vitest. Vitest 2 fails at startup: it runs its own Vite 5,
+  and `@sveltejs/vite-plugin-svelte` 7 needs Vite 8
 - `npm run deploy`: build, then `wrangler pages deploy`. **Direct upload, no CI,
   no git integration**: pushing to `main` deploys nothing
 
