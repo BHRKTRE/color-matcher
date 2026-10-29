@@ -8,11 +8,12 @@ SvelteKit 2, Svelte 5 runes, JavaScript. `colord` is the only runtime dependency
 
 - `npm run dev`, `npm run build`
 - `npm run lint`: Prettier check then ESLint. No Stylelint
-- `npm test`: Playwright (`npm run preview` builds, then `wrangler pages dev`
+- `npm test`: Playwright (`npm run preview` builds, then `wrangler dev`
   serves on 8788) then Vitest. Playwright rewrites the tracked
   `test-results/.last-run.json` on every run; restore it before committing
-- `npm run deploy`: build, then `wrangler pages deploy`. **Direct upload, no CI,
-  no git integration**: pushing to `main` deploys nothing
+- `npm run deploy`: build, then `wrangler deploy`, a Worker with static assets
+  (Pages until 2026-10-29). **No CI, no Workers Builds**: pushing to `main`
+  deploys nothing
 
 ## Layout
 

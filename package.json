@@ -5,13 +5,13 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "npm run build && wrangler pages dev",
+		"preview": "npm run build && wrangler dev --port 8788",
 		"test": "npm run test:integration && npm run test:unit",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"deploy": "npm run build && wrangler pages deploy"
+		"deploy": "npm run build && wrangler deploy"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.63.0",
