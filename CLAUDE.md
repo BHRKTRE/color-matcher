@@ -12,7 +12,7 @@ SvelteKit 2, Svelte 5 runes, JavaScript. `colord` is the only runtime dependency
   serves on 8788) then Vitest. Playwright rewrites the tracked
   `test-results/.last-run.json` on every run; restore it before committing
 - `npm run deploy`: build, then `wrangler deploy`, a Worker with static assets
-  (Pages until 2026-10-29). **No CI, no Workers Builds**: pushing to `main`
+  (Pages until 2026-11-03). **No CI, no Workers Builds**: pushing to `main`
   deploys nothing
 
 ## Layout

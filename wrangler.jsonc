@@ -1,5 +1,5 @@
 // The site as a Worker with static assets, deployed by hand (`npm run deploy`).
-// It ran on Cloudflare Pages until 2026-10-29; Cloudflare starts new projects
+// It ran on Cloudflare Pages until 2026-11-03; Cloudflare starts new projects
 // on Workers and puts new features there.
 {
 	"$schema": "./node_modules/wrangler/config-schema.json",
